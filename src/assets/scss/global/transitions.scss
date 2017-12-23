@@ -1,0 +1,54 @@
+.fade {
+  opacity: 0;
+  @include transition($transition-fade);
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.collapse {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition($transition-collapse);
+}
+
+
+/*
+Message过渡
+*/
+//.bounce-enter-active,.bounce-leave-active{
+//  transition:all .5s;
+//}
+//.bounce-enter,.bounce-leave-to{
+//  opacity:0.3;
+//  transform:scale(0.9);
+//}
+.bounce-enter-active {
+  animation: bounce-in .3s;
+}
+.bounce-leave-active {
+  animation: bounce-in .3s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.3;
+  }
+  88% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

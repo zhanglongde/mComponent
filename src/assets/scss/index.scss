@@ -1,0 +1,32 @@
+@import "global/index";
+@import "components/index";
+
+.by-container{
+  width:1000px;
+  margin:auto;
+}
+.by-content{
+  padding:0 16px;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.by-content>h2{
+  padding-bottom:6px;
+}
+.by-content>.row+.row{
+  margin-top:10px;
+}
+
+.component-list{
+  &>li{
+    cursor:pointer;
+    width:20%;
+    height:50px;
+    &>a{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
