@@ -23,10 +23,10 @@
     height:100%;
   }
   .drawer-body-wrapper{
-    padding-left: 320px;
+    padding-left: 220px;
   }
   .drawer-content{
-    width:300px;
+    width:200px;
     padding: 20px 16px;
   }
   .nav-container{
@@ -44,7 +44,7 @@
         placement: 'left',
         showMode: 'overlay',
         isDrawerShow: false,
-        navItems: [{name: 'home', href: '/'}, {name: '通用组件', href: '/'}, {name: '数据输入组件', href: '/'}, {name: '数据展示组件', href: '/'}, {name: '容器组件', href: '/'}]
+        navItems: [{name: 'home', href: '/'}, {name: '通用组件', href: '#/Common'}, {name: '数据输入组件', href: '#/Data-Entry'}, {name: '数据展示组件', href: '#/Data-Display'}, {name: '容器组件', href: '#/Container'}]
       }
     },
     methods: {
