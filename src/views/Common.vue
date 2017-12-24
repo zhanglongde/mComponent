@@ -4,6 +4,14 @@
       <h1>通用组件</h1>
     </div>
     <div class="by-content">
+      <h2>Picker</h2>
+      <zButton @click="isPicker = true">picker</zButton>
+      <Picker v-if="isPicker" @close="isPicker = false">
+        <PickerItem :listData="listData" v-model="month"></PickerItem>
+        <PickerItem :listData="listData2" type="cycle" v-model="day"></PickerItem>
+      </Picker>
+    </div>
+    <div class="by-content">
       <h2>加载转轮</h2>
       <div>
         <Spin size="xs"></Spin>
@@ -52,7 +60,7 @@
     </div>
     <div class="by-content">
       <h2>无限加载</h2>
-      <zButton @click="goScrollPage">Enter Drawer</zButton>
+      <zButton @click="goScrollPage">Enter Scroller</zButton>
     </div>
   </div>
 </template>
@@ -67,7 +75,12 @@
           {name: '法国', id: 5, children: [{name: '巴黎', id: 6}, {name: '马赛', id: 7}, {name: '里昂', id: 8}]}],
         selectedId: -1,
         selectedDepth: -1,
-        list: [1,2,3,4,5,6,7,8,9,10]
+        list: [1,2,3,4,5,6,7,8,9,10],
+        isPicker: false,
+        listData: Array.from({length: 12}, (value, index) => 1 + index),
+        listData2: Array.from({length: 30}, (value, index) => 'test' + index),
+        month: 10,
+        day: 'test0'
       }
     },
     methods: {

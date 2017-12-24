@@ -23,7 +23,7 @@
     height:100%;
   }
   .drawer-body-wrapper{
-    padding-left: 220px;
+    padding-left: 20px;
   }
   .drawer-content{
     width:200px;
