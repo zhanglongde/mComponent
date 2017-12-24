@@ -31,6 +31,7 @@ import Transfer from './container/transfer'
 import Tree from './container/tree'
 import TreeSelect from './container/tree-select'
 import Card from './container/card'
+import Drawer from './container/drawer'
 
 const components = {
   Icon,
@@ -54,7 +55,8 @@ const components = {
   Tooltip,
   Card,
   Spin,
-  Scroll
+  Scroll,
+  Drawer
 }
 
 const zComponent = {

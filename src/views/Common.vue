@@ -52,7 +52,7 @@
     </div>
     <div class="by-content">
       <h2>无限加载</h2>
-      <zButton @click="goScrollPage">enter</zButton>
+      <zButton @click="goScrollPage">Enter Drawer</zButton>
     </div>
   </div>
 </template>

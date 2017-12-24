@@ -1,0 +1,66 @@
+.drawer-container{
+  display:block;
+  position:relative;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  &>.drawer-body{
+    position:absolute;
+    top:0;  left:0;  right:0;  bottom:0;
+    height:100%;
+
+    transition:transform ease-in-out 0.38s,visibility 0.38s;
+
+    &>.drawer-mask{
+      position:absolute;
+      top:0;  left:0;  right:0;  bottom:0;
+      z-index: 9999;
+
+      background-color: rgba(0,0,0,0.3);
+      visibility:hidden;
+      opacity:0;
+
+      transition: opacity ease-in-out 0.38s,visibility ease-in-out 0.38s;
+    }
+  }
+
+  &>.drawer{
+    position:absolute;
+    top:0;
+    height:100%;
+
+    overflow:hidden;
+    visibility: hidden;
+    pointer-events: none;
+    background-color: #fff;
+
+    transition:transform ease-in-out 0.38s,visibility 0.38s;
+    will-change:none;
+
+    &.left{
+      left:0;
+      // 向左偏离可视区域
+      transform:translateX(-100%);
+    }
+    &.right{
+      right:0;
+      //left:auto;
+      // 向右偏离可视区域
+      transform:translateX(100%);
+    }
+  }
+
+  &.active{
+    &>.drawer-body>.drawer-mask{
+      visibility: visible;
+      opacity: 1;
+    }
+    &>.drawer{
+      pointer-events:inherit;
+      visibility: visible;
+      transform:translateX(0);
+    }
+  }
+}

@@ -4,6 +4,10 @@
       <h1>容器组件</h1>
     </div>
     <div class="by-content">
+      <h2>Drawer</h2>
+      <zButton @click="goDrawerPage">Enter Drawer</zButton>
+    </div>
+    <div class="by-content">
       <h2>列表</h2>
       <div class="d-flex justify-content-between">
         <List :items="fruits">
@@ -139,6 +143,9 @@
             console.log('cancel')
           }
         })
+      },
+      goDrawerPage () {
+        this.$router.push({path: '/Drawer'})
       }
     }
   }

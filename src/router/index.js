@@ -6,6 +6,7 @@ import Scroll from '@/views/Scroll'
 import DataDisplay from '@/views/DataDisplay'
 import DataEntry from '@/views/DataEntry'
 import Container from '@/views/Container'
+import Drawer from '@/views/Drawer'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/Container',
       name: 'Container',
       component: Container
+    },
+    {
+      path: '/Drawer',
+      name: 'CommonDrawer',
+      component: Drawer
     }
   ]
 })
