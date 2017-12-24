@@ -18,6 +18,7 @@ import Switch from './common/switch'
 import Circle from './common/circle'
 import Spin from './common/spin'
 import Scroll from './common/scroll'
+import PullRefresh from './common/pull-refresh'
 import DatePicker from './common/flatpickr'
 import TimePicker from './common/timepicker'
 import {Picker, PickerItem} from './common/picker'
@@ -57,6 +58,7 @@ const components = {
   Card,
   Spin,
   Scroll,
+  PullRefresh,
   Drawer,
   Picker,
   PickerItem

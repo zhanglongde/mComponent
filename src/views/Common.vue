@@ -62,6 +62,14 @@
       <h2>无限加载</h2>
       <zButton @click="goScrollPage">Enter Scroller</zButton>
     </div>
+    <div class="by-content">
+      <h2>上下刷新</h2>
+      <PullRefresh @on-pullup='onPullup' @on-pulldown='onPulldown'>
+        <ul>
+          <li :key="index" v-for="(item, index) in pullRefreshItems"># item {{ index }}</li>
+        </ul>
+      </PullRefresh>
+    </div>
   </div>
 </template>
 <script>
@@ -80,7 +88,20 @@
         listData: Array.from({length: 12}, (value, index) => 1 + index),
         listData2: Array.from({length: 30}, (value, index) => 'test' + index),
         month: 10,
-        day: 'test0'
+        day: 'test0',
+        pullRefreshItems: [1,2,3,4,5],
+        onPullup(finshCallback) {
+          setTimeout(()=>{
+            this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
+            finshCallback();//finish the refreshing state
+          },3000);
+        },
+        onPulldown(finshCallback) {
+          setTimeout(()=>{
+            this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
+            finshCallback();//finish the refreshing state
+          },3000);
+        }
       }
     },
     methods: {
