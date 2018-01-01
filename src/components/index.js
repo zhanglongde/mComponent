@@ -22,6 +22,7 @@ import PullRefresh from './common/pull-refresh'
 import DatePicker from './common/flatpickr'
 import TimePicker from './common/timepicker'
 import {Picker, PickerItem} from './common/picker'
+import Menu from './common/menu'
 import Badge from './data-display/badge'
 import Steps from './data-display/steps'
 import Tooltip from './data-display/tooltip'
@@ -61,7 +62,8 @@ const components = {
   PullRefresh,
   Drawer,
   Picker,
-  PickerItem
+  PickerItem,
+  Menu
 }
 
 const zComponent = {

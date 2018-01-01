@@ -13,24 +13,28 @@
       </Picker>
     </div>
     <div class="by-content">
-      <h2>加载转轮</h2>
-      <div>
-        <Spin size="xs"></Spin>
-        <Spin size="sm"></Spin>
-        <Spin></Spin>
-        <Spin size="lg"></Spin>
-        <Spin size="xl"></Spin>
-        <Spin>加载更多...</Spin>
-        <Spin style="margin-left:100px;" :isPureText="true">加载更多...</Spin>
-      </div>
-      <div>
-        <Spin size="xs" type="dot"></Spin>
-        <Spin size="sm" type="dot"></Spin>
-        <Spin type="dot"></Spin>
-        <Spin size="lg" type="dot"></Spin>
-        <Spin size="xl" type="dot"></Spin>
-      </div>
+      <h2>menu</h2>
+      <zButton @click="goMenuPage">go Menu Page</zButton>
     </div>
+    <!--<div class="by-content">-->
+      <!--<h2>加载转轮</h2>-->
+      <!--<div>-->
+        <!--<Spin size="xs"></Spin>-->
+        <!--<Spin size="sm"></Spin>-->
+        <!--<Spin></Spin>-->
+        <!--<Spin size="lg"></Spin>-->
+        <!--<Spin size="xl"></Spin>-->
+        <!--<Spin>加载更多...</Spin>-->
+        <!--<Spin style="margin-left:100px;" :isPureText="true">加载更多...</Spin>-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--<Spin size="xs" type="dot"></Spin>-->
+        <!--<Spin size="sm" type="dot"></Spin>-->
+        <!--<Spin type="dot"></Spin>-->
+        <!--<Spin size="lg" type="dot"></Spin>-->
+        <!--<Spin size="xl" type="dot"></Spin>-->
+      <!--</div>-->
+    <!--</div>-->
     <div class="by-content">
       <h2>图表结构</h2>
       <zCircle :percent="80" :size="100">
@@ -121,6 +125,9 @@
       },
       goScrollPage () {
         this.$router.push({path: '/Scroll'})
+      },
+      goMenuPage () {
+        this.$router.push({path: '/Menu'})
       }
     }
   }

@@ -2,54 +2,58 @@
   <div class="by-container">
     <div class="by-content">
       <h1>通用组件</h1>
+      <h2>Menu</h2>
     </div>
     <div class="by-content">
-      <h2>无限加载</h2>
-      <Scroll :on-reach-edge="loadData">
-        <div class="scroll-item" v-for="item in list">
-          {{ item }}
-        </div>
-      </Scroll>
+      <Menu type="bottom" :number="4" :colors="[ '#58a', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584' ]">
+        <template slot="item_btn"></template>
+        <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
+        <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
+        <a slot="item_3" class="fa fa-weibo fa-lg" herf="#" ></a>
+        <a slot="item_4" class="fa fa-github fa-lg" herf="#" ></a>
+      </Menu>
+    </div>
+    <div class="by-content">
+      <Menu type="left" :number="4" :colors="[ '#85a', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584' ]">
+        <template slot="item_btn"></template>
+        <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
+        <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
+        <a slot="item_3" class="fa fa-weibo fa-lg" herf="#" ></a>
+        <a slot="item_4" class="fa fa-github fa-lg" herf="#" ></a>
+      </Menu>
+    </div>
+    <div class="by-content">
+      <Menu type="middle" :number="4" :colors="[ '#fc3', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584' ]">
+        <template slot="item_btn"></template>
+        <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
+        <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
+        <a slot="item_3" class="fa fa-weibo fa-lg" herf="#" ></a>
+        <a slot="item_4" class="fa fa-github fa-lg" herf="#" ></a>
+      </Menu>
+    </div>
+    <div class="by-content">
+      <Menu type="middle-around" :number="4" :colors="[ '#9c3', 'rgb(255, 255, 102)', '#FFE26F', '#F3825F', '#F19584' ]">
+        <template slot="item_btn"></template>
+        <a slot="item_1" class="fa fa-twitter fa-lg" herf="#" ></a>
+        <a slot="item_2" class="fa fa-weixin fa-lg" herf="#" ></a>
+        <a slot="item_3" class="fa fa-weibo fa-lg" herf="#" ></a>
+        <a slot="item_4" class="fa fa-github fa-lg" herf="#" ></a>
+      </Menu>
     </div>
   </div>
 </template>
-<style>
-  .scroll-container{
-    border: 1px solid #ccc;
-    border-radius:2px;
-    padding: 0 10px;
-  }
-  .scroll-item{
+<style scoped>
+  .by-content{
+    width:300px;
+    margin-top:100px;
     height:50px;
-    line-height:50px;
   }
 </style>
 <script>
   export default {
-    name: 'CommonScroll',
+    name: 'CommonMenu',
     data () {
       return {
-        list: [1,2,3,4,5,6,7,8,9,10]
-      }
-    },
-    methods: {
-      loadData (dir) {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            if (dir > 0) {
-              const first = this.list[0];
-              for (let i = 1; i < 11; i++) {
-                this.list.unshift(first - i);
-              }
-            } else {
-              const last = this.list[this.list.length - 1];
-              for (let i = 1; i < 11; i++) {
-                this.list.push(last + i);
-              }
-            }
-            resolve();
-          }, 500);
-        });
       }
     }
   }

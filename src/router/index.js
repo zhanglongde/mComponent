@@ -7,6 +7,7 @@ import DataDisplay from '@/views/DataDisplay'
 import DataEntry from '@/views/DataEntry'
 import Container from '@/views/Container'
 import Drawer from '@/views/Drawer'
+import Menu from '@/views/Menu'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/Drawer',
       name: 'CommonDrawer',
       component: Drawer
+    },
+    {
+      path: '/Menu',
+      name: 'CommonMenu',
+      component: Menu
     }
   ]
 })

@@ -1,0 +1,216 @@
+// CircleMenu菜单按钮和菜单默认背景颜色
+$CircleMenuBtnColor: #F0A28E;
+$CircleMenuItem1Color: #8e24aa;
+$CircleMenuItem2Color: #00e676;
+$CircleMenuItem3Color: #ffa000;
+$CircleMenuItem4Color: #40c4ff;
+
+// 菜单基础间隔距离
+$MenuSpace: 55px;
+$MenuPrepSpace: -55px;
+
+//菜单type类型
+$MenuType: (
+  top: top,
+  bottom: top,
+  left: left,
+  right: left,
+  middle: left,
+  middle-around: (left, top)
+) !default;
+$MenuTypeNormal: (
+  top: top,
+  bottom: top,
+  left: left,
+  right: left
+) !default;
+
+//圆环大小
+$CircleWidth: 48px;
+$CircleHeight: 48px;
+
+// 遮罩基础样式
+@mixin mask() {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+// 菜单按钮基础样式
+@mixin menu-base() {
+  width: $CircleWidth;
+  height: $CircleHeight;
+  line-height: 50px;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  position: relative;
+}
+
+//圆角
+@mixin circle(){
+  border-radius: 50%;
+}
+
+//菜单位置
+@mixin CircleItem(){
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.oy-menu-group .btn-list .oy-menu-item{
+  @each $type,$type-name in $MenuType {
+    .#{$type} &{
+      @include CircleItem();
+      transition: 0.2s 0.1s;
+    }
+  }
+}
+.oy-menu-group.open .btn-list .oy-menu-item{
+  @each $type,$type-name in $MenuType {
+    .#{$type} & {
+      opacity: 1;
+    }
+  }
+}
+
+@each $type,$type-name in $MenuTypeNormal {
+  @for $i from 1 through 4{
+    .#{$type} .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_#{$i}{
+      #{$type-name}: $i * $MenuPrepSpace;
+    }
+  }
+}
+
+.middle .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_1{
+  left: $MenuPrepSpace;
+}
+.middle .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_2{
+  left: $MenuSpace;
+}
+.middle .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_3{
+  left: 2 * $MenuPrepSpace;
+}
+.middle .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_4{
+  left: 2 * $MenuSpace;
+}
+
+.middle-around .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_1{
+  left: 2 * $MenuPrepSpace;
+  top: 0;
+}
+.middle-around .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_2{
+  left: 2 * $MenuSpace;
+  top: 0;
+}
+.middle-around .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_3{
+  top: $MenuPrepSpace;
+  left: $MenuPrepSpace;
+}
+.middle-around .oy-menu-group.open .btn-list .oy-menu-item.oy-menu-item_4{
+  top: $MenuPrepSpace;
+  left: $MenuSpace;
+}
+
+
+//子菜单默认背景颜色
+.blue {
+  background: $CircleMenuItem4Color;
+}
+.yellow {
+  background: $CircleMenuItem3Color;
+}
+.green {
+  background: $CircleMenuItem2Color;
+}
+
+.purple {
+  background: $CircleMenuItem1Color;
+}
+
+.pink {
+  background: $CircleMenuBtnColor;
+}
+//遮罩样式
+.oy-mask-white {
+  @include mask();
+  background: rgba(255, 255, 255, 0.8);
+  &_transparent{
+    @include mask();
+  }
+}
+
+.oy-mask-black {
+  @include mask();
+  background: rgba(0, 0, 0, 0.6);
+  &_transparent{
+    @include mask();
+  }
+}
+
+// 菜单和子菜单的基础样式
+.oy-menu-group{
+  z-index: 1001;
+}
+
+.oy-menu-btn{
+  @include menu-base();
+  &:active{
+    box-shadow: inset 0 0 1000px rgba(0, 0, 0, .5);
+  }
+}
+.oy-menu-btn-Circle {
+  @include circle();
+  outline: none;
+}
+
+.oy-menu-item{
+  @include menu-base();
+  @include circle();
+  &:active{
+    box-shadow: inset 0 0 1000px rgba(0, 0, 0, .5);
+  }
+}
+
+// 默认开关按钮样式
+.icon-bars{
+  background: #fff;
+  height: 1px;
+  width: 22px;
+  margin: auto;
+  display: block;
+  position: relative;
+  transition: 0.2s 0.2s;
+  &:after{
+    content: '';
+    position: absolute;
+    height: 22px;
+    width: 1px;
+    background: #fff;
+    top: -10px;
+  }
+  .oy-menu-group.open &{
+    transform: rotate(45deg);
+  }
+}
+
+// 菜单和子菜单定位
+.oy-menu-group {
+  position: relative;
+  float: right;
+  transition: 0.2s;
+  //text-align:center;
+}
+.oy-menu-group .btn-toggle {
+  z-index: 15;
+}
+
+
+

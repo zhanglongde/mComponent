@@ -80,7 +80,7 @@
     </div>
     <div class="by-content">
       <h2>卡片</h2>
-      <Card :topImgSrc="'../assets/images/wisdom.png'">Card</Card>
+      <Card :topImgSrc="img" style="width:200px;">Card</Card>
       <Card class="mt-2" header="header" footer="footer">
         <div slot="title">title</div>
         body
@@ -92,9 +92,13 @@
         <div slot="footer">footer test</div>
       </Card>
     </div>
+    <div class="by-content">
+      <div v-html="signature"></div>
+    </div>
   </div>
 </template>
 <script>
+//  import signatureTemplate from 'html-loader?interpolate!../template/signature.html'
   export default {
     name: 'Container',
     data () {
@@ -109,7 +113,9 @@
         onOff: false,
         onOffCentered: false,
         onOffTransitionNone: false,
-        onOffTransition3d: false
+        onOffTransition3d: false,
+        signature: '',
+        img: require('../assets/images/wisdom.png') // 还可以通过transformToRequire
       }
     },
     methods: {
@@ -146,7 +152,17 @@
       },
       goDrawerPage () {
         this.$router.push({path: '/Drawer'})
+      },
+      loadTemplate () {
+        let obj = {}
+        obj.signature = '<a>1039326495@qq.com</a> zhanglongde'
+//        console.log(typeof signatureTemplate)
+//        this.signature = require(`html-loader?interpolate!../template/signature.html`)({signature: 'test'})
+        this.signature = require(`html-loader?!../template/signature.html`)
       }
+    },
+    mounted () {
+      this.loadTemplate()
     }
   }
 </script>

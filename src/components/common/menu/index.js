@@ -1,2 +1,2 @@
 import Menu from './Menu.vue';
-export default {Menu};
+export default Menu;
