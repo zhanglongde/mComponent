@@ -98,7 +98,9 @@
   </div>
 </template>
 <script>
+//  import signatureTemplate from '../template/signature.html'
 //  import signatureTemplate from 'html-loader?interpolate!../template/signature.html'
+  import Compile from '../template/compile'
   export default {
     name: 'Container',
     data () {
@@ -154,11 +156,10 @@
         this.$router.push({path: '/Drawer'})
       },
       loadTemplate () {
-        let obj = {}
-        obj.signature = '<a>1039326495@qq.com</a> zhanglongde'
-//        console.log(typeof signatureTemplate)
-//        this.signature = require(`html-loader?interpolate!../template/signature.html`)({signature: 'test'})
-        this.signature = require(`html-loader?!../template/signature.html`)
+        let signature = '<a>1039326495@qq.com</a> zhanglongde'
+        let signatureTemplate = require(`../template/signature.html`)
+        let parse = eval(Compile(signatureTemplate))
+        this.signature = parse()
       }
     },
     mounted () {
