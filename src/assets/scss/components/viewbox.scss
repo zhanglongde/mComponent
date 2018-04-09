@@ -1,0 +1,12 @@
+.view-box{
+  position:relative;
+  height:100%;
+  &>.view-box-content{
+    height:100%;
+    //padding-top: 50px;
+    //padding-bottom: 50px;
+
+    overflow:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

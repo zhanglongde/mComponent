@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <transition name="page-pop-in">
-       <router-view/>
-    </transition>
+    <Container></Container>
   </div>
 </template>
 <style lang="scss">
   @import "assets/scss/index.scss";
 </style>
 <script>
+import Container from '@/containers/Container'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Container
+  }
+
 }
 </script>
