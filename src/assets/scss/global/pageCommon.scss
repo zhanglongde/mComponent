@@ -2,6 +2,19 @@
   box-sizing: border-box;
 }
 
+html,body, div#app{
+  height: 100%;
+  /*width: 100%;*/
+  /*overflow-y:hidden;*/
+  overflow-x:hidden;
+}
+.view-box .z-header{
+  position:absolute;
+  left:0;
+  right:0;
+  z-index:1;
+}
+
 /*垂直滚动条*/
 .scroll-v{
   overflow-y: auto !important;
@@ -105,9 +118,9 @@
   top:0;right:0;left:0;bottom:0;
   background: rgba(0,0,0,.6);
 }
-
 .mask--transparent{
   position:fixed;
   z-index: 1000;
   top:0;right:0;left:0;bottom:0;
 }
+

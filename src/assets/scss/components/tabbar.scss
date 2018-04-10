@@ -11,6 +11,7 @@
 }
 
 .tab-bar__item{
+  color: #557;
   .tab-bar__icon>sup{
     position:absolute;
     top:-8px;
@@ -27,4 +28,8 @@
     font-size:14px;
     line-height:50px;
   }
+}
+
+.tab-bar__item--on{
+  color: #fc3;
 }

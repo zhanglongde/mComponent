@@ -4,10 +4,11 @@
   &>.view-box-content{
     box-sizing: border-box;
     height:100%;
-    //padding-top: 50px;
-    //padding-bottom: 50px;
+    padding-top: $TopHeader;
+    padding-bottom: $BottomFooter;
 
-    overflow:auto;
+    overflow-y:auto;
+    overflow-x:hidden;
     -webkit-overflow-scrolling: touch;
   }
 }
