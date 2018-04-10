@@ -9,6 +9,9 @@ import Container from '@/views/Container'
 import Drawer from '@/views/Drawer'
 import Menu from '@/views/Menu'
 
+import Home from '@/views/Home'
+import Me from '@/views/Me'
+
 Vue.use(Router)
 
 export default new Router({
@@ -53,6 +56,21 @@ export default new Router({
       path: '/Menu',
       name: 'CommonMenu',
       component: Menu
+    },
+    {
+      path: '/Home',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/Demo',
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/Me',
+      name: 'Me',
+      component: Me
     }
   ]
 })

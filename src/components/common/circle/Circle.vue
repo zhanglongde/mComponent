@@ -11,7 +11,7 @@
 </template>
 <script>
   export default {
-    name: 'Circle',
+    name: 'zCircle',
     props: {
       percent: {
         type: Number,

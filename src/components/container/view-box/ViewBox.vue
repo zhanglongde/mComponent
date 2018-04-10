@@ -1,7 +1,7 @@
 <template>
   <div class="view-box">
     <slot name="header"></slot>
-    <div class="view-box-content" ref="viewBoxBody" :style="{paddingTop: paddingTop, paddingBottom: paddingBottom}">
+    <div class="view-box-content" ref="viewBoxBody" :style="{paddingTop: paddingTop + 'px', paddingBottom: paddingBottom + 'px'}">
       <slot></slot>
     </div>
     <slot name="footer"></slot>
@@ -11,12 +11,15 @@
 <script>
   export default {
     name: 'ViewBox',
+    data () {
+      return {}
+    },
     props: {
-     'paddingTop': {
+     paddingTop: {
         type: [Number, String],
         default: 0
      },
-     'paddingBottom': {
+     paddingBottom: {
        type: [Number, String],
        default: 0
      }

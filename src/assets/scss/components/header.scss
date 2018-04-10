@@ -1,0 +1,104 @@
+$header-background-color: #35495e;
+$header-title-color: #fff;
+$header-text-color: #ccc;
+$header-arrow-color: #ccc;
+
+.z-header{
+  position:relative;
+  padding: 3px 0;
+  background-color: $header-background-color;
+
+  .z-header-title,.z-header-title-area{
+    margin: 0 88px;
+    height:40px;
+    width:auto;
+
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .z-header-title{
+    line-height: 40px;
+    text-align:center;
+    font-size: 18px;
+    font-weight:400;
+    color:$header-title-color;
+  }
+
+  .z-header-left,.z-header-right{
+    position:absolute;
+    top:14px;
+    display:block;
+    font-size:14px;
+    line-height:21px;
+    color:$header-text-color;
+    a,button{
+      float:left;
+      margin-right:8px;
+      color:$header-text-color;
+    }
+  }
+  .z-header-left{
+    left:18px;
+    .z-header-back{
+      padding-left:16px;
+    }
+    .left-arrow{
+      position:absolute;
+      width:30px;
+      height:30px;
+      top:-5px;
+      left:-5px;
+      &:before{
+        content: '';
+        position: absolute;
+        width:12px;
+        height:12px;
+        border: 1px solid $header-arrow-color;
+        border-width:1px 0 0 1px;
+        transform: rotate(315deg);
+        top:8px;
+        left:7px;
+      }
+    }
+  }
+  .z-header-right{
+    right:15px;
+    a,button{
+      margin-left:8px;
+      margin-right:0;
+    }
+    .z-header-more:after{
+      content:'\2022\0020\2022\0020\2022\0020';
+      font-size:16px;
+    }
+  }
+}
+
+
+.z-header-fade-in-right-enter-active{
+  animation: fadeinR .5s;
+}
+.z-header-fade-in-left-enter-active{
+  animation: fadeinR .5s;
+}
+@keyframes fadeinR{
+  0%{
+    opacity:0;
+    transform:translateX(150px);
+  }
+  100%{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+@keyframes fadeinL {
+  0%{
+    opacity:1;
+    transform:translateX(-150px);
+  }
+  100%{
+    opacity:1;
+    transform:translateX(0);
+  }
+}

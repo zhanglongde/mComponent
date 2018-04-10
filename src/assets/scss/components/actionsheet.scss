@@ -1,0 +1,121 @@
+/**
+* actionsheet
+*/
+$actionsheet-label-primary-color: #1AAD19;
+$actionsheet-label-warn-color: #E64340;
+$actionsheet-label-default-color: #000;
+$actionsheet-label-disabled-color: #ccc;
+$actionSheetAndroidBorderRadius: 2px;
+
+$cellBorderColor:#D9D9D9;
+// background
+$bgColorDefault: #EFEFF4;
+$bgColorActive: #ECECEC;
+
+.actionsheet {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 100%);
+  backface-visibility: hidden;
+  z-index: 5000;
+  width: 100%;
+  background-color: $bgColorDefault;
+  //slide up animation
+  transition: transform .3s;
+}
+.actionsheet__menu{
+  background-color: #FFFFFF;
+}
+.actionsheet__action {
+  margin-top: 6px;
+  background-color: #FFFFFF;
+}
+.actionsheet__cell {
+  position: relative;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  &:before {
+    @include setTopLine($cellBorderColor);
+  }
+  &:active{
+    background-color: $bgColorActive;
+  }
+  &:first-child{
+    &:before{
+      display: none;
+    }
+  }
+}
+
+
+//android actionSheet
+.skin_android{
+  .actionsheet {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    //padding: 0 40px;
+    width: 274px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    background: transparent;
+    //slide up animation
+    transition: transform .3s;
+  }
+  .actionsheet__action{
+    display: none;
+  }
+  .actionsheet__menu {
+    border-radius: $actionSheetAndroidBorderRadius;
+    box-shadow: 0 6px 30px 0 rgba(0,0,0,.1);
+  }
+  .actionsheet__cell {
+    padding: 13px 24px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+    &:first-child {
+      border-top-left-radius: $actionSheetAndroidBorderRadius;
+      border-top-right-radius: $actionSheetAndroidBorderRadius;
+    }
+    &:last-child {
+      border-bottom-left-radius: $actionSheetAndroidBorderRadius;
+      border-bottom-right-radius: $actionSheetAndroidBorderRadius;
+    }
+  }
+}
+
+//actionSheet aniamtion
+.actionsheet_toggle{
+  transform: translate(0, 0);
+}
+
+
+.actionsheet-menu-primary {
+  color: $actionsheet-label-primary-color;
+}
+.actionsheet-menu-warn {
+  color: $actionsheet-label-warn-color;
+}
+.actionsheet-menu-default {
+  color: $actionsheet-label-default-color;
+}
+.actionsheet-menu-disabled {
+  color: $actionsheet-label-disabled-color;
+}
+.actionsheet-mask-enter,
+.actionsheet-mask-leave-active,
+.android-actionsheet-enter,
+.android-actionsheet-leave-active {
+  opacity: 0;
+}
+.actionsheet-mask-leave-active,
+.actionsheet-mask-enter-active,
+.android-actionsheet-leave-active,
+.android-actionsheet-enter-active {
+  transition: opacity 300ms!important;
+}

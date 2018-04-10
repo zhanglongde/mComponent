@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 
 /*垂直滚动条*/
 .scroll-v{
@@ -56,4 +59,55 @@
     background-color: rgb(139, 139, 139);
   }
   border-radius: 5px;
+}
+
+//红点提示
+.reddot,.reddot-border,.reddot-s {
+  position: relative;
+}
+.reddot:after,.reddot-border:after,.reddot-s:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #f74c31;
+  border-radius: 5px;
+  right: -3px;
+  top: -3px;
+  background-clip: padding-box;
+}
+.reddot-border:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  right: -4px;
+  top: -4px;
+  background-clip: padding-box;
+  padding: 1px;
+}
+.reddot-s:after {
+  width: 6px;
+  height: 6px;
+  top: -5px;
+  right: -5px;
+}
+
+
+//遮罩层
+.mask {
+  position:fixed;
+  z-index: 1000;
+  top:0;right:0;left:0;bottom:0;
+  background: rgba(0,0,0,.6);
+}
+
+.mask--transparent{
+  position:fixed;
+  z-index: 1000;
+  top:0;right:0;left:0;bottom:0;
 }

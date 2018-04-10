@@ -35,6 +35,9 @@ import Tree from './container/tree'
 import TreeSelect from './container/tree-select'
 import Card from './container/card'
 import Drawer from './container/drawer'
+import Header from './container/header'
+import {TabBar, TabBarItem} from './container/tabbar'
+import ViewBox from './container/view-box'
 
 const components = {
   Icon,
@@ -63,7 +66,10 @@ const components = {
   Drawer,
   Picker,
   PickerItem,
-  Menu
+  Menu,
+  TabBar,
+  TabBarItem,
+  ViewBox
 }
 
 const zComponent = {
@@ -81,7 +87,8 @@ const zComponent = {
   zInput: Input,
   zTextarea: Textarea,
   zModal: Modal,
-  zCircle: Circle
+  zCircle: Circle,
+  zHeader: Header
 }
 
 const install = function(Vue) {

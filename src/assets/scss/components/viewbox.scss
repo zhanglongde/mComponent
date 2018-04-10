@@ -2,6 +2,7 @@
   position:relative;
   height:100%;
   &>.view-box-content{
+    box-sizing: border-box;
     height:100%;
     //padding-top: 50px;
     //padding-bottom: 50px;

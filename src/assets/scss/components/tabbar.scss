@@ -1,0 +1,30 @@
+.tab-bar{
+  display:flex;
+  justify-content: space-around;
+  position:absolute;
+  z-index:500;
+  bottom:0;
+  width:100%;
+  background-color: #F7F7F7;
+
+  border-top:1px solid #ccc;
+}
+
+.tab-bar__item{
+  .tab-bar__icon>sup{
+    position:absolute;
+    top:-8px;
+    left:100%;
+    transform: translateX(-50%);
+    z-index:101;
+  }
+  .tab-bar--simple{
+    padding:0;
+    height:50px;
+    line-height:50px;
+  }
+  .tab-bar__label{
+    font-size:14px;
+    line-height:50px;
+  }
+}

@@ -1,7 +1,6 @@
 <template>
   <div class="by-container">
     <div class="by-content">
-      <PageHeader></PageHeader>
       <h1>通用组件</h1>
     </div>
     <div class="by-content">
