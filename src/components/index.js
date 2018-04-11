@@ -39,6 +39,8 @@ import Header from './container/header'
 import {TabBar, TabBarItem} from './container/tabbar'
 import ViewBox from './container/view-box'
 
+import Stack from './special/tantanStack'
+
 const components = {
   Icon,
   Radio,
@@ -69,7 +71,9 @@ const components = {
   Menu,
   TabBar,
   TabBarItem,
-  ViewBox
+  ViewBox,
+  // special
+  Stack
 }
 
 const zComponent = {

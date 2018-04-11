@@ -87,14 +87,14 @@
       </Card>
       <Card class="mt-2" style="width:300px;">
         <div slot="header">header test</div>
-        <img slot="topImg" src="../assets/images/wisdom.png" alt="..." class="img-responsive">
+        <img slot="topImg" src="../../../assets/images/wisdom.png" alt="..." class="img-responsive">
         body test
         <div slot="footer">footer test</div>
       </Card>
     </div>
-    <div class="by-content">
-      <div v-html="signature"></div>
-    </div>
+    <!--<div class="by-content">-->
+      <!--<div v-html="signature"></div>-->
+    <!--</div>-->
   </div>
 </template>
 <script>
@@ -117,7 +117,7 @@
         onOffTransitionNone: false,
         onOffTransition3d: false,
         signature: '',
-        img: require('../assets/images/wisdom.png') // 还可以通过transformToRequire
+        img: require('../../../assets/images/wisdom.png') // 还可以通过transformToRequire
       }
     },
     methods: {

@@ -77,7 +77,7 @@
   </div>
 </template>
 <script>
-  import PageHeader from './PageHeader.vue'
+  import PageHeader from '../PageHeader.vue'
   export default {
     name: 'Common',
     data () {

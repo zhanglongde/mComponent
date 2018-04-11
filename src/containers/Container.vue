@@ -11,9 +11,6 @@
         <tab-bar-item :link="{path: '/Me'}">我</tab-bar-item>
       </tab-bar>
     </view-box>
-    <!--<transition name="page-pop-in">-->
-      <!--<router-view/>-->
-    <!--</transition>-->
   </div>
 </template>
 <script>

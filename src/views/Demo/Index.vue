@@ -23,6 +23,16 @@
             <h2>容器组件</h2><icon type="icon-arrow-right"></icon>
           </router-link>
         </li>
+        <li>
+          <router-link to="special">
+            <h2>定制组件</h2><icon type="icon-arrow-right"></icon>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="guide-page">
+            <h2>引导页</h2><icon type="icon-arrow-right"></icon>
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
