@@ -1,7 +1,9 @@
 <template>
-  <div class="guide-container">
+  <div class="guide-container view">
     <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
-      <router-view></router-view>
+      <!--<transition name="page-pop-in">-->
+        <router-view></router-view>
+      <!--</transition>-->
     </v-touch>
     <ul class="circle-nav">
       <li :class="{'nav-current':$route.name==='page1'||$route.name==='default'}"></li>

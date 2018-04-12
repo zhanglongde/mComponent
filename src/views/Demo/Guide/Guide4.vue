@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             vuegConfig: {
-                disable: true
+                disable: false
             }
         }
     }

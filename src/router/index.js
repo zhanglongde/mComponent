@@ -103,7 +103,7 @@ export default new Router({
     },
     {
       path: '/guide-page',
-      name: 'GuidePage',
+      // name: 'GuidePage',
       component: Guide,
       children: [{
         name:'default',

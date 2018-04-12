@@ -8,7 +8,7 @@
 		data(){
 			return {
 				vuegConfig:{
-					disable:true
+					disable: false
 				}
 			}
 		}

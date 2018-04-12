@@ -142,8 +142,8 @@
         this.temporaryData.tracking = false
         this.temporaryData.animation = true
         // 滑动结束，触发判断
-        // 判断划出面积是否大于0.4
-        if (this.offsetRatio >= 0.4) {
+        // 判断划出面积是否大于0.2
+        if (this.offsetRatio >= 0.2) {
           // 计算划出后最终位置
           let ratio = Math.abs(this.temporaryData.posheight / this.temporaryData.poswidth)
           this.temporaryData.poswidth = this.temporaryData.poswidth >= 0 ? this.temporaryData.poswidth + 200 : this.temporaryData.poswidth - 200
