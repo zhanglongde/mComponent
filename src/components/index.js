@@ -12,6 +12,9 @@ import Toast from './data-display/toast'
 import Toastr from './data-display/toastr'
 import Alert from './data-display/alert'
 import Confirm from './data-display/confirm'
+import Badge from './data-display/badge'
+import Steps from './data-display/steps'
+import Tooltip from './data-display/tooltip'
 
 import Slider from './common/slider'
 import Switch from './common/switch'
@@ -23,9 +26,7 @@ import DatePicker from './common/flatpickr'
 import TimePicker from './common/timepicker'
 import {Picker, PickerItem} from './common/picker'
 import Menu from './common/menu'
-import Badge from './data-display/badge'
-import Steps from './data-display/steps'
-import Tooltip from './data-display/tooltip'
+import {Swipeout, SwipeoutItem, SwipeoutButton} from './common/swipeout'
 
 import {List, ListItem} from './container/list'
 import $Modal from './container/modal'
@@ -42,9 +43,15 @@ import ViewBox from './container/view-box'
 import Stack from './special/tantanStack'
 
 const components = {
+  // base
   Icon,
   Radio,
   Checkbox,
+  // common
+  Swipeout,
+  SwipeoutItem,
+  SwipeoutButton,
+  // data display
   Message,
   Banner,
   Toast,
@@ -54,6 +61,7 @@ const components = {
   Slider,
   Steps,
   Badge,
+  // container
   List,
   ListItem,
   Tree,

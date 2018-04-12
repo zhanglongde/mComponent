@@ -1,6 +1,6 @@
 <template>
   <button class="btn-x btn-x-default btn-x-type1" @click="handleClick">
-    <slot></slot>
+    <slot>{{text}}</slot>
   </button>
 </template>
 
@@ -12,6 +12,7 @@
       }
     },
     props: {
+      text: String
     },
     methods: {
       handleClick () {

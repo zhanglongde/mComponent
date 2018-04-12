@@ -9,9 +9,7 @@ import zComponent from './components/index'
 
 import VueTouch from 'vue-touch'
 import vueg from '@/libs/vueg'
-// import '@/libs/vueg/css/animate.css'
 Vue.use(vueg, router,{
-  // forwardAnim: 'fadeInRight',
   tabs:[{
     name:'page1'
   },{
