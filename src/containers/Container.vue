@@ -15,6 +15,12 @@
 </template>
 <script>
   export default {
-    name: 'PageContainer'
+    name: 'PageContainer',
+    computed: {
+      isHeader () {
+        console.log(this.$router.history.current.fullPath.indexOf('guide'))
+        return this.$router.history.current.fullPath.indexOf('guide') < 0
+      }
+    }
   }
 </script>

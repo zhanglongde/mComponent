@@ -248,11 +248,13 @@
         if (index === this.temporaryData.currentPage) {
           return
         }
-        if (this.inStack(index, currentPage)) {
-          let perIndex = index - currentPage > 0 ? index - currentPage : index - currentPage + length
+        if (this.inStack(index, currentPage)) { // 实际上，已排除首页index
+          let perIndex = index - currentPage > 0 ? index - currentPage : index - currentPage + length // 堆栈内部index
           style['opacity'] = '1'
           style['transform'] = 'translate3D(0,0,' + -1 * 60 * (perIndex - this.offsetRatio) + 'px' + ')'
           style['zIndex'] = visible - perIndex
+//          console.log('%c-----------------------------------------------------------', 'background-color:#e66;color:#fff;font-size:30px;')
+//          console.log(style)
           if (!this.temporaryData.tracking) {
             style[this.temporaryData.prefixes.transition + 'TimingFunction'] = 'ease'
             style[this.temporaryData.prefixes.transition + 'Duration'] = 300 + 'ms'
